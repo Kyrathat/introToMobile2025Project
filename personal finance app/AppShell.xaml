@@ -1,0 +1,49 @@
+<Shell
+    x:Class="personal_finance_app.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:personal_finance_app"
+    Shell.FlyoutBehavior="Disabled"
+    Title="personal_finance_app"
+    >
+    <Shell.Resources>
+        <Style TargetType="TabBar">
+            <Setter Property="Shell.TabBarBackgroundColor"
+            Value="CornFlowerBlue"/>
+            <Setter Property="Shell.TitleColor"
+                    Value="Black"/>
+        </Style>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent Title="Home"
+                          ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Title="Transactions"
+             
+            Icon="receipt.svg">
+            <ShellContent Title="Create"
+                         ContentTemplate="{DataTemplate local:newTrans}" />
+            <ShellContent Title="Update"
+                         ContentTemplate="{DataTemplate local:editTrans}" />
+            <ShellContent Title="Delete"
+                          ContentTemplate="{DataTemplate local:deleteTrans}"/>
+        </Tab>
+        <Tab Title="Budget"
+            Icon="wallet.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:budget}" />
+        </Tab>
+        <Tab Title="Insights"
+             Icon="finance.svg">
+            <ShellContent Title="insight"
+                          ContentTemplate="{DataTemplate local:insight}"/>
+            <ShellContent Title="Category Breakdown"
+                          ContentTemplate="{DataTemplate local:CategoryBreakdown}"/>
+        </Tab>
+        <Tab Title="Audit Log"
+            Icon="finance.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:audit}"></ShellContent>
+        </Tab>
+    </TabBar>
+
+</Shell>
