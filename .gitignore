@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/personal finance app/bin/Debug/net8.0-android
+/personal finance app/obj
