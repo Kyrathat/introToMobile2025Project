@@ -5,21 +5,18 @@
     <Grid RowDefinitions=" 100, auto, *"
       ColumnDefinitions=".75*, .25*"
       Padding="10">
-        
+
         <Image Grid.ColumnSpan="2"
                Source="dotnet_bot.png"
                BackgroundColor="Orange"/>
-
-        <Label Text="Test two"/>
-
-        <CarouselView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+        <CarouselView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
               ItemsSource="{Binding MyItems}"
               BackgroundColor="DimGrey">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                         <Label Text="{Binding Title}" TextColor="White" FontSize="24" HorizontalOptions="Center"/>
-                        <Image Source="{Binding Image}" WidthRequest="200" HeightRequest="200"/>
+                        <Label Text="{Binding Description}" TextColor="White" FontSize="18" HorizontalOptions="Center"/>
                     </StackLayout>
                 </DataTemplate>
             </CarouselView.ItemTemplate>

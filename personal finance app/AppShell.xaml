@@ -39,10 +39,8 @@
                           ContentTemplate="{DataTemplate local:insight}"/>
             <ShellContent Title="Category Breakdown"
                           ContentTemplate="{DataTemplate local:CategoryBreakdown}"/>
-        </Tab>
-        <Tab Title="Audit Log"
-            Icon="finance.svg">
-            <ShellContent ContentTemplate="{DataTemplate local:audit}"></ShellContent>
+            <ShellContent Title="Audit"
+                          ContentTemplate="{DataTemplate local:audit}"/>
         </Tab>
     </TabBar>
 

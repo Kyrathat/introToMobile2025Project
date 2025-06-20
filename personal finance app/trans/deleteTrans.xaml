@@ -2,11 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="personal_finance_app.deleteTrans"
-             Title="deleteTrans">
-    <VerticalStackLayout>
-        <Label 
-            Text="Delete your transactions here."
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Delete Transaction">
+    <Grid RowDefinitions="1*, 9*"
+      ColumnDefinitions=".75*, .25*">
+        <VerticalStackLayout Margin="0,45,0,0" VerticalOptions="Center" Grid.ColumnSpan="2" HorizontalOptions="Center" Grid.Row="0">
+            <Label Text="Search existing transactions"/>
+            <Entry Margin="0,0,0,15" />
+            <Button Text="Search"/>
+        </VerticalStackLayout>
+
+        <CollectionView VerticalOptions="Center" HorizontalOptions="Center" Grid.ColumnSpan="3" x:Name="transactionsView" ItemsSource="{Binding Transactions}" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <Grid HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Margin="5, 0, 5, 0" Grid.Column="0" Text="{Binding Category}"/>
+                            <Label Margin="5, 0, 5, 0" Grid.Column="1" Text="{Binding Title}"/>
+                            <Label Margin="5, 0, 5, 0" Grid.Column="2" Text="{Binding Description}"/>
+                            <Label Margin="5, 0, 5, 0" Grid.Column="3" Text="{Binding Amount}"/>
+                            <Label Margin="5, 0, 5, 0" Grid.Column="4" Text="{Binding DateCreated}" />
+                        </Grid>
+                    </ContentView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
 </ContentPage>
