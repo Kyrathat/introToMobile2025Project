@@ -2,11 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="personal_finance_app.newTrans"
-             Title="newTrans">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="New Transaction">
+    <Grid 
+        RowDefinitions="1*, 8*, 2*"
+        ColumnDefinitions=".75*, .25*">
+        <VerticalStackLayout BackgroundColor="LightGray" Grid.Row="1" Grid.ColumnSpan="2"
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="10"
+                     Padding="20">
+
+            <Label HorizontalOptions="Center" Text="Category"/>
+            <Picker HorizontalTextAlignment="Center" WidthRequest="350" Title="Transaction Category" ItemsSource="{Binding TransCategories}"/>
+            <Label HorizontalOptions="Center"  Text="Title" />
+            <Entry WidthRequest="350" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+            <Label HorizontalOptions="Center" Text="Amount" />
+            <Entry WidthRequest="350" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+            <Label HorizontalOptions ="Center" Text="Description" />
+            <Entry WidthRequest="350" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+
+        </VerticalStackLayout>
+        <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Spacing="20"
+                       Padding="10">
+            <Button Grid.Column="0"  Text="Clear" Margin="0, 15, 45, 0"/>
+            <Button Grid.Column="1" Text="Confirm" Margin="45, 15, 0, 0"/>
+        </HorizontalStackLayout>
+
+
+    </Grid>
+
 </ContentPage>

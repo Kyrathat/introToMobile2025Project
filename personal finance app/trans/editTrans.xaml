@@ -2,11 +2,69 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="personal_finance_app.editTrans"
-             Title="editTrans">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Edit Transaction">
+    
+    <Grid RowDefinitions="auto, *, auto"
+          ColumnDefinitions=".75*, .25*">
+        <VerticalStackLayout
+    Spacing="25"
+    VerticalOptions="Center"
+    HorizontalOptions="Center"
+    WidthRequest="350"
+    Grid.Row="0"
+    Grid.ColumnSpan="2">
+
+            <Label Text="Search existing transactions" HorizontalOptions="Center" />
+            <Entry Margin="0,0,0,15" HorizontalOptions="FillAndExpand" />
+            <Button Text="Search" HorizontalOptions="FillAndExpand" />
+        </VerticalStackLayout>
+
+
+        <Border HeightRequest="150"
+        WidthRequest="400"
+        Margin="0,15"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Grid.ColumnSpan="2"
+        Grid.Row="1">
+
+            <CollectionView x:Name="transactionsView"
+                    ItemsSource="{Binding Transactions}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <Grid ColumnSpacing="10"
+                          Padding="10"
+                          HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="{Binding Category}" />
+                                <Label Grid.Column="1" Text="{Binding Title}" />
+                                <Label Grid.Column="2" Text="{Binding Description}" />
+                                <Label Grid.Column="3" Text="{Binding Amount}" />
+                                <Label Grid.Column="4" Text="{Binding DateCreated}" />
+                            </Grid>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Border>
+
+        <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="2"
+                       HorizontalOptions="Center"
+                       Spacing="20"
+                       Padding="10">
+            <Button Text="Test1" />
+            <Button Text="Test2" />
+        </HorizontalStackLayout>
+
+
+
+    </Grid>
 </ContentPage>

@@ -15,7 +15,7 @@ namespace personal_finance_app
         public class myItem
         {
             public string Title { get; set; }
-            public string Image { get; set; }
+            public string Description { get; set; }
         }
 
         public class MainViewModel
@@ -26,8 +26,8 @@ namespace personal_finance_app
             {
                 MyItems = new ObservableCollection<myItem>()
                 {
-                    new myItem { Title = "First", Image = "first"},
-                    new myItem { Title = "Second", Image = "second"}
+                    new myItem { Title = "First", Description = "This is where your recent transactions go"},
+                    new myItem { Title = "Second", Description = "This is where your overall budget for the month is."}
                 };
             }
         }
