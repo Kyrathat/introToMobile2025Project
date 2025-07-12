@@ -1,12 +1,51 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="personal_finance_app.budget"
-             Title="budget">
-    <VerticalStackLayout>
-        <Label 
-            Text="This is your budgets page."
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Budget Overview"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Budget Summary -->
+            <Frame CornerRadius="15" Padding="15" BackgroundColor="#F0F4F8">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Total Budget: $1,500" FontSize="16" FontAttributes="Bold"/>
+                    <Label Text="Total Spent: $650" FontSize="14" TextColor="Gray"/>
+                    <Label Text="Remaining: $850" FontSize="14" TextColor="Green"/>
+
+                    <ProgressBar Progress="0.433" HeightRequest="10" BackgroundColor="DarkGreen"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Add Budget Button -->
+            <Button Text="Add Budget Item"
+                    Command="{Binding AddBudgetCommand}"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"/>
+
+            <!-- Budget Items List -->
+            <CollectionView ItemsSource="{Binding BudgetItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="10" Padding="10" Margin="0,5" BorderColor="#E0E0E0">
+                            <Grid ColumnDefinitions="2*, Auto">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Category}" FontSize="12" TextColor="Gray"/>
+                                </VerticalStackLayout>
+                                <Label Text="{Binding Amount, StringFormat='${0:F2}'}"
+                                       HorizontalOptions="End"
+                                       FontSize="14"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
