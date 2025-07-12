@@ -5,5 +5,7 @@ public partial class budget : ContentPage
 	public budget()
 	{
 		InitializeComponent();
-	}
+        this.BindingContext = new BudgetViewModel();
+
+    }
 }

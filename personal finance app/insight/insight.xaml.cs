@@ -4,6 +4,7 @@ public partial class insight : ContentPage
 {
 	public insight()
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+        this.BindingContext = new InsightsViewModel();
+    }
 }

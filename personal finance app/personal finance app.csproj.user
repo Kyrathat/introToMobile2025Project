@@ -11,9 +11,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="audit\audit.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="budget\budget.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -21,15 +18,6 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="insight\insight.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="trans\deleteTrans.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="trans\editTrans.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="trans\newTrans.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

@@ -19,16 +19,6 @@
             <ShellContent Title="Home"
                           ContentTemplate="{DataTemplate local:MainPage}"/>
         </Tab>
-        <Tab Title="Transactions"
-             
-            Icon="receipt.svg">
-            <ShellContent Title="Create"
-                         ContentTemplate="{DataTemplate local:newTrans}" />
-            <ShellContent Title="Update"
-                         ContentTemplate="{DataTemplate local:editTrans}" />
-            <ShellContent Title="Delete"
-                          ContentTemplate="{DataTemplate local:deleteTrans}"/>
-        </Tab>
         <Tab Title="Budget"
             Icon="wallet.svg">
             <ShellContent ContentTemplate="{DataTemplate local:budget}" />
@@ -39,8 +29,6 @@
                           ContentTemplate="{DataTemplate local:insight}"/>
             <ShellContent Title="Category Breakdown"
                           ContentTemplate="{DataTemplate local:CategoryBreakdown}"/>
-            <ShellContent Title="Audit"
-                          ContentTemplate="{DataTemplate local:audit}"/>
         </Tab>
     </TabBar>
 
