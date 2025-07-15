@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "personal finance app", "personal finance app\personal finance app.csproj", "{C1C106AA-0198-49F3-9C64-274D995A7CF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFAPI", "PFAPI\PFAPI.csproj", "{EE86808A-3BFA-43D4-9AAE-EA04E23971EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{C1C106AA-0198-49F3-9C64-274D995A7CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1C106AA-0198-49F3-9C64-274D995A7CF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C1C106AA-0198-49F3-9C64-274D995A7CF2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EE86808A-3BFA-43D4-9AAE-EA04E23971EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE86808A-3BFA-43D4-9AAE-EA04E23971EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE86808A-3BFA-43D4-9AAE-EA04E23971EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE86808A-3BFA-43D4-9AAE-EA04E23971EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
